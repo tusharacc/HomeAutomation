@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeScreenFragment">
+
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.tusharsaurabh.myhome.HomeScreenFragment"
+        android:label="My Home"
+        tools:layout="@layout/fragment_home_screen">
+        <action
+            android:id="@+id/action_homeScreenFragment_to_listLights"
+            app:destination="@id/listLights" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_toDoFragment"
+            app:destination="@id/toDoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listLights"
+        android:name="com.tusharsaurabh.myhome.ListLights"
+        android:label="@string/lights"
+        tools:layout="@layout/fragment_list_lights">
+        <action
+            android:id="@+id/action_listLights_to_lightMode"
+            app:destination="@id/lightMode">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/lightMode"
+        android:name="com.tusharsaurabh.myhome.LightMode"
+        android:label="Mode"
+        tools:layout="@layout/fragment_light_mode"/>
+    <fragment
+        android:id="@+id/toDoFragment"
+        android:name="com.tusharsaurabh.myhome.ToDoFragment"
+        android:label="@string/to_do"
+        tools:layout="@layout/fragment_to_do" />
+</navigation>
